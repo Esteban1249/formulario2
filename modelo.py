@@ -5,7 +5,7 @@ class EmpleadoModel:
     
     def __init__(self, nombres="", apellidos="", identificacion="", correo="", 
                  fecha_nacimiento="", direccion="", num_hijos=0, cargo=""):
-        # Los atributos del modelo coinciden con los ítems del formulario
+      
         self.nombres = nombres
         self.apellidos = apellidos
         self.identificacion = identificacion
@@ -28,7 +28,7 @@ class EmpleadoModel:
         self.fecha_nacimiento = datos_formulario.get("fecha_nacimiento", "")
         self.direccion = datos_formulario.get("direccion", "")
         
-        # Intenta convertir a entero, si falla, usa 0
+        
         try:
             self.num_hijos = int(datos_formulario.get("num_hijos", 0))
         except ValueError:
@@ -36,11 +36,12 @@ class EmpleadoModel:
             
         self.cargo = datos_formulario.get("cargo", "")
         
-        # Para demostración: imprime los datos guardados
+        
         print("\n--- Datos Guardados en el Modelo ---")
         print(f"Nombres: {self.nombres}")
         print(f"Identificación: {self.identificacion}")
         print(f"Número de Hijos: {self.num_hijos}")
         print("------------------------------------")
         
+
         return True # Retorna éxito
